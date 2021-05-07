@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Doc - Git &amp; GitHub </title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- <!doctype html> -->
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <title>Git and GitHub</title>
+  </head>
+  <body style="background-color:#BED9EE;">
+    <nav  class="navbar navbar-expand-lg navbar-light" style="background-color:#BED9EE;">
+      <a class="navbar-brand" href="#"><b>Git & GitHub</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#git">Git <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#github">GitHub</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#cmd">Git Commands</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#setup">SSH Setup</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Download
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://git-scm.com/downloads" target="_">Git</a>
+          <a class="dropdown-item" href="https://desktop.github.com/" target="_">GitHub Desktop</a>
+<!--           <a class="dropdown-item" href="#">none</a> -->
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <div class="mx-5" >
+      <h1> Introduction </h1>
+      <p> If you have gotten to the point in your coding adventure where you have started saving code files on your computer, you ought to study git bash and GitHub asap! <br> The earlier you analyze these subjects, the earlier you can ensure the safety of your code, the earlier you can get used to version management (which software program builders use all the time on the activity).
+      </p><hr>
+  <h1 id="git">About Git</h1>
+  <p><b>Git</b> is the free and open source distributed version control system (dvcs), that is responsible for everything GitHub
+related that happens locally on your computer. This cheat sheet features the most important and commonly
+used Git commands for easy reference.</p>
+<!--   <p>Example link to <span class="nav"><a href="#s3">Usage</a></span></p> -->
+      <h3>What is a repository</h3>
+<p>A repository is simply a database containing all the information needed to retain and manage the revisions and history of a project. Within a
+repository, Git maintains two primary data structures, the object store and the index.
+The object store is designed to be efficiently copied during a clone operation as part of the mechanism that supports a fully DVCS.
+Index is transitory information , is private to a repository and can be created or modified on demand as needed.</p>
+      <h3>Configure Git</h3>
+      <p> To start using Git from your computer, you must enter your credentials (user name and email) to identify you as the author of your work. The user name and email should match the ones you’re using on GitHub.
+      <p>In your shell, add your user name:</p>
+      <ul><li>git config --global user.name "your_username"</li></ul>
+      <p>And your email address:</p>
+
+<ul><li>git config --global user.email "your_email_address@example.com"</li></ul>
+      <p>To check the configuration, run:</p>
+
+      <ul><li>git config --global --list</li></ul>
+      <p><b>Note</b> - The --global option tells Git to always use this information for anything you do on your system. If you omit --global or use --local, the configuration is applied only to the current repository.<a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">- (Read More)</a></p>
+      </p><hr>
+    <h3>Git authentication methods</h3>
+    <p>
+      To connect your computer with GitHub, you need to add your credentials to identify yourself. You have two options:</p>
+
+    <ul><li>Authenticate on a project-by-project basis through <b>HTTPS</b>, and enter your credentials every time you perform an operation between your computer and GitHub.</li><li>
+      Authenticate through <b>SSH</b> once and GitHub no longer requests your credentials every time you pull, push, and clone.</li></ul>
+    <p> To start the authentication process, we’ll clone an existing repository to our computer:</p>
+    <ul><li>If you want to use SSH to authenticate, follow the instructions on the SSH documentation to set it up before cloning.  -><a href="#setup"> Setup</a></li>
+      <ol> Note: - If you have <b>GitHub Desktop</b> installed, you can use it to clone repositories and not deal with SSH keys. </ol>
+      <li>If you want to use HTTPS, GitLab requests your user name and password:</li>
+<ul><li>If you have 2FA enabled for your account, you must use a Personal Access Token with read_repository or write_repository permissions instead of your account’s password. Create one before cloning.</li>
+  <li>If you don’t have 2FA enabled, use your account’s password.</li></ul></ul>
+    <hr>
+    <div id="github"><h3>About GitHub</h3> <h5> #No coding necessary</h5>
+      <p>GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p><p>The part of using GitHub is just --- you need a GitHub.com account and Internet access.<br> You don’t need to know how to code, use the command line, or install Git (the version control software GitHub is built on).</p>
+      <h5>Step 1. Create a Repository</h5>
+      <p>A repository is usually used to organize a single project. Repositories can contain folders and files, images, videos, spreadsheets, and data sets – anything your project needs.<br> We recommend including a README, or a file with information about your project.<br> GitHub makes it easy to add one at the same time you create your new repository. It also offers other common options such as a license file.<br>
+
+      Your "<b>hello-world</b>" repository can be a place where you store ideas, resources, or even share and discuss things with others.</p>
+      <h5>To create a new repository</h5>
+      <ul><li>In the top right corner, previous to your avatar or Profile Photo, click <i class="fas fa-plus"></i> and then select <b>New repository</b>.</li></ul>
+      <ul><li>Name your repository <b>hello-world</b>.</li></ul>
+      <ul><li>Write a short description. (Optional)</li></ul>
+      <ul><li>Select Initialize this repository with a README.</li></ul>
+      <ul><li>Click Create repository.</li></ul>
+    </div>
+    <div class="card" style="width: 50rem;">
+      <img class="card-img-top" src="git-cycle.png" alt="Git">
+    </div>
+    <hr>
+    <div id="cmd">
+    <h3>Initial Setup and Git Commands</h3>
+        <ul><li><b>Initialize a repo</b>: - Create an empty git repo or reinitialize an existing one</li>
+       
+
+          <ul><li>$ git init</li></ul> </ul>
+        <ul><li><b>Clone a repo</b>: - Clone the <b>hello-word</b> repo into a new directory called hello-word</li>
+          <ul><li>$ git clone https://github.com/<username>/hello-word.git</li></ul></ul>
+          <ul><li><b>Setup Remotes</b>: - First, let's see a list of the repositories (remotes) whose branches you track:</li>
+          <ul><li>$ git remote -v</li></ul>
+            <ol>Note: - If the above command show nothing, then we haven't setup upstream.</ol>
+          <ul><li>git remote add upstream https://github.com/<upstream_username>/<repo_name>.git</li></ul>
+          <ul><li>git fetch upstream</li></ul></ul></ul>
+          <ul><li><b>Branching</b>: - When working on a fork, you could be switching between different branches quite commonly. As such, you generally want to stay off the master branch and work on your own feature branches so that master is always clean and you can base new branches off of it.</li>
+            <li> To create a new branch...</li>
+          <ul><li>$ git checkout -b 'branch-name'</li></ul>
+          <li> If you want to know what branches are available in your working directory? Simply run: -</li>
+          <ul><li>$ git branch</li>(This will show you all the branches belong to that repo.)</ul>
+          <li> To switch/jump to an existing branch...</li>
+          <ul><li>$ git checkout 'branch-name'</li></ul>
+          <ul><li>$ git init</li></ul> </ul>
+        <ul><li><b>Status</b>: - Not sure if you're working on a clean branch? Want to see what files have changed? Git status will show you a report.</li>
+          <ul><li>$ git status</li></ul></ul>
+          <ul><li><b>Staging Changes</b>: - Now that you've added or modified some files, you need to stage those commits into "the staging area." Think of git commits like an array of airlock hatches on a space ship. On this space ship, you can only open the door to one airlock at a time.<br> When you open the hatch, you can put stuff in or take stuff out at will. Not until you've closed the door have you committed those changes (git commit) and not until you hit the red button do all those hatches open up into space (git push).<br>You can stage inidividual files or all files at once.</li>
+          <ul><li>$ git add firstfile.py</li>(For a prticular file.)</ul>
+          <ul><li>$ git add .</li>(for all files.)</ul></ul>
+          <ul><li><b>Unstaging Changes / Restoring Files</b>: - Maybe you accidentally staged some files that you don't want to commit.</li>
+           <ul><li>$ git restore firstfile.py</li>(For a prticular file.)</ul>
+          <ul><li>$ git restore .</li>(for all files.)</ul></ul>
+          <ul><li><b>Commits</b>: - Commit often. You can always squash down your commits before a push.</li>
+          <ul><li>$ git commit -m "Updated README"</li></ul></ul>
+          <li>Want to automatically stage files that have been modified and deleted, but new files you haven't told git about will be unaffected? Pass the -a or --all option flag:</li>
+          <ul><li>$ git commit -am "Updated README"</li></ul>
+          <ul><li><b>Undoing Commits</b>: - The following command will undo your most recent commit and put those changes back into staging, so you don't lose any work:</li>
+          <ul><li>$ git reset --soft HEAD~1</li><br>The next one will completely delete the commit and throw away any changes. Be absolutely sure this is what you want:
+          <li>git reset --hard HEAD~1</li></ul></ul>
+          <ul><li><b>Squashing Commits</b>: - Maybe you have 4 commits, but you haven't pushed anything yet and you want to put everything into one commit so your boss doesn't have to read a bunch of garbage during code review.</li>
+          <ul><li>$ git rebase -i HEAD~4</li>
+          <li>Note: - By doing this, An interactive text file is displayed. You'll see the word "pick" to the left of each commit. Leave the one at the top alone and replace all the others with "s" for squash, save and close the file. This will display another interactive window where you can update your commit messages into one new commit message. I like to use "f" instead of "s", because I usually work in such a way that I name my first commit appropriately from the get-go. "f" just skips the 2nd interactive file and uses the first commit message.</li></ul>
+          </ul>
+           <ul><li><b>Pushing</b>: - Push a local branch for the first time:</li>
+          <ul><li>$ git push --set-upstream origin <branch></li>
+              <li>$ git push</li></ul></ul>
+          <ul><li><b>Imp: - Undo Last Push</b>: - Some would say this is bad practice. Once you push something you shouldn't overwrite those changes. Instead, you're supposed to create a new commit that reverts the changes in the last one. So, technically, you shouldn't do this, but... you can?</li>
+          <ul><li>$ git reset --hard HEAD~1 && git push -f origin master <branch></li></ul></ul>
+          <ul><li><b>Fetching</b>: - Fetch changes from upstream:</li>
+          <ul><li>$ git fetch upstream</li>
+              <li>Note: - Fetch changes from both origin and upstream in the same shot:</li>
+              <li>$ git fetch --multiple origin upstream</li></ul></ul>
+          <ul><li><b>Merging</b>: - The git merge command lets you take the independent lines of development created by git branch and integrate them into a single branch.</li>
+          <ul><li>$ git fetch origin</li><li>git merge origin/dev</li></ul></ul>
+          <ul><li><b>Pulling</b>: - Pulling is just doing a fetch followed by a merge. If you know your branch is clean (e.g., master branch), go ahead and get the latest changes. There will be no merge conflicts as long as your branch is clean.</li>
+          <ul><li>$ git pull origin/dev</li></ul></ul>
+          <ul><li><b>Rebasing</b>: - Rebasing is a way of rewriting history. In place of merge, what this does is stacks your commits on top of commits that are already pushed up. In this case, you want to stack your commits on top of origin/dev</li>
+          <ul><li>$ git fetch origin</li><li>git rebase origin/dev</li>
+              <li>Note: - If you already have a local branch set to track dev then just do:</li>
+              <li>$ git rebase dev</li>
+              <li>Note: - Would you like to fetch, merge and then stack your changes on top, all in one shot? You can! If you have tracking setup on the current branch, just do:</li>
+              <li>$ git pull --rebase</li>
+              <li>Note: - Another great use of rebasing is just rewriting commit messages. To get an interactive text editor for the most recent commit, do:</li>
+              <li>$ git rebase -i HEAD~1</li></ul>
+          </ul>
+          <ul><li><b>Deleting Branches</b>: - Delete a local branch:</li>
+          <ul><li>$ git branch -d < local_branch ></li>
+          <li>Note: - Delete a remote branch on origin:</li>
+          <li>$ git push origin :<remote_branch></li>
+          </ul></ul>
+          <ul><li><b>Stashing</b>: - Sometimes you need to stash your changes so you can be on a clean branch or maybe because you want to go back and try something before you make a commit with these changes. Here's how you do a stash:</li>
+          <ul><li>$ git git stash</li>
+          <li>Note: - Now, if you want to unstash those changes and bring them back into your working directory:</li>
+          <li>$ git stash pop</li>
+          <li>Note: - Or maybe you want to unstash your changes without popping them off the stack. In other words, you might want to apply these stashed changes multiple times. To do this:</li>
+          <li>$ git stash apply</li>
+          <li>Note: - For a list of stashes:</li>
+          <li>$ git stash list</li>
+          <li>Note: - And to apply a specific stash from that list (e.g., stash@{3}):</li>
+          <li>$ git stash apply stash@{3}</li>
+          </ul></ul>
+
+          </ul>
+
+    
+    
+    </div>
+    <hr>
+    <div id="setup">
+    <h3> SSH Setup</h3>
+    <h5>Generating a new SSH key</h5>
+    <ul><li>Open Git Bash.</li>
+        <li>Paste the text below, substituting in your GitHub email address.</li>
+        <ul> <li>$ ssh-keygen -t ed25519 -C "your_email@example.com"</li> </ul>
+        <ol>Note: - This creates a new ssh key, using the provided email as a label.</ol>
+        <ul>> Generating public/private ed25519 key pair.</ul>
+        <li>When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.</li>
+        <ul> <li>> Enter a file in which to save the key (/c/Users/you/.ssh/id_ed25519):[Press enter]</li> </ul>
+        <li>At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases".</li>
+        <ol>Note: - If you don't want to enter any pharse and want to go by default value. [Press enter] and [Press enter again]<br><b> or</b></ol>
+        <ul> <li>> Enter passphrase (empty for no passphrase): [Type a passphrase]</li> </ul>
+        <ul> <li>> Enter same passphrase again: [Type passphrase again]</li> </ul>
+    </ul>
+    <h5>Adding your SSH key to the ssh-agent</h5>
+    <ul><li>Ensure the ssh-agent is running:</li>
+        <ul> <li>$ eval `ssh-agent -s`</li> </ul>
+        <ul>> Agent pid 59566</ul>
+        <li>Add your SSH private key to the ssh-agent. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_ed25519 in the command with the name of your private key file.</li>
+        <ul> <li>$ ssh-add ~/.ssh/id_ed25519</li> </ul>
+    </ul>
+        <ul> That's it, you're ready to go. The only thing is to add it to you GitHub Account.</ul>
+    </div>
+    <h5>Adding a new SSH key to your GitHub account</h5>
+    <ul> <li>Copy the SSH public key to your clipboard.<br>If your SSH public key file has a different name than the example code, modify the filename to match your current setup. When copying your key, don't add any newlines or whitespace.</li> </ul>
+        <ul>$ clip < ~/.ssh/id_ed25519.pub</ul>
+        <ol># Copies the contents of the id_ed25519.pub file to your clipboard</ol>
+        <ul> <li>Now, open your <b>GitHub Account</b> --> click on <b>Profile Photo</b>, and then click on <b>settings</b>.</li></ul>
+        <ul><li>In the user settings sidebar, click <b>SSH and GPG keys</b>.</li></ul>
+        <ul><li>Click <b>New SSH key</b> or <b>Add SSH key</b>.</li></ul>
+        <ul><li>In the "Title" field, add a descriptive label for the new key. For example, if you're using a Personal Laptop, you might call this key "<b>Personal MSI Laptop</b>".</li></ul>
+        <ul><li>Paste your SSH key into the "<b>Key</b>" field.</li></ul>
+        <ul><li>Click <b>Add SSH key</b>.</li></ul>
+        <ul><li>If prompted, confirm your GitHub password. Please do it.</li></ul>
+
+
+        
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
