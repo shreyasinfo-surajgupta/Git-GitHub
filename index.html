@@ -137,8 +137,8 @@ Index is transitory information , is private to a repository and can be created 
           <ul><li>$ git add firstfile.py</li>(For a prticular file.)</ul>
           <ul><li>$ git add .</li>(for all files.)</ul></ul>
           <ul><li><b>Unstaging Changes / Restoring Files</b>: - Maybe you accidentally staged some files that you don't want to commit.</li>
-           <ul><li>$ git restore firstfile.py</li>(For a prticular file.)</ul>
-          <ul><li>$ git restore .</li>(for all files.)</ul></ul>
+           <ul><li>$ git restore --staged firstfile.py</li>(For a prticular file.)</ul>
+          <ul><li>$ git restore --staged .</li>(for all files.)</ul></ul>
           <ul><li><b>Commits</b>: - Commit often. You can always squash down your commits before a push.</li>
           <ul><li>$ git commit -m "Updated README"</li></ul></ul>
           <li>Want to automatically stage files that have been modified and deleted, but new files you haven't told git about will be unaffected? Pass the -a or --all option flag:</li>
@@ -178,7 +178,7 @@ Index is transitory information , is private to a repository and can be created 
           <li>$ git push origin :<remote_branch></li>
           </ul></ul>
           <ul><li><b>Stashing</b>: - Sometimes you need to stash your changes so you can be on a clean branch or maybe because you want to go back and try something before you make a commit with these changes. Here's how you do a stash:</li>
-          <ul><li>$ git git stash</li>
+          <ul><li>$ git stash</li>
           <li>Note: - Now, if you want to unstash those changes and bring them back into your working directory:</li>
           <li>$ git stash pop</li>
           <li>Note: - Or maybe you want to unstash your changes without popping them off the stack. In other words, you might want to apply these stashed changes multiple times. To do this:</li>
